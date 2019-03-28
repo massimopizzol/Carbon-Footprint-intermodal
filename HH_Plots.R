@@ -49,7 +49,7 @@ g <- ggplot(routes, aes(x = X, y = value, fill = variable))+
         plot.margin = margin(0.5,0.5,0.5,0.5, "cm"))+
   stat_summary(fun.y = sum, aes(label = signif(..y.., digits = 5), group = X), geom = "text", angle = 90, hjust = 0.01, size=2.25)+
   facet_wrap(~FromTo, nrow = 2, scales = 'free_x')
-g + xlab("Route number") + ylab("kg CO2-eq") + coord_cartesian(ylim = c(0, 275)) + scale_y_continuous(breaks = c(0,50,100,150,200,250))
+g + xlab("Route number") + + ylab(expression("kg CO"[2]*"-eq")) + coord_cartesian(ylim = c(0, 275)) + scale_y_continuous(breaks = c(0,50,100,150,200,250))
 
 
 
@@ -112,6 +112,6 @@ gmc <- ggplot(mc_long, aes(x = variable, y = value)) +
         panel.background = element_rect(fill = "white"),
         plot.margin = margin(0.5,0.5,0.5,0.5, "cm"))+
   facet_wrap(~FromTo, nrow = 2, scales = 'free_x')
-gmc + xlab("Route number") + ylab("kg CO2-eq") 
+gmc + xlab("Route number") + ylab(expression("kg CO"[2]*"-eq")) 
 
 
